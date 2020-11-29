@@ -63,6 +63,6 @@ else:
 ```
 + I get `Running on the GPU`
 + Feel free to `ctrl+d` inside this container. It will stick around. If you want to go back in at a later time, just run:
-+ `docker exec -it pytorch bash` and keep crunching models
++ `docker start pytorch ; docker exec -it pytorch bash` and keep crunching models
 
 Feel free to open an issue if you had any trouble.
