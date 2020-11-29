@@ -53,6 +53,7 @@ There is a `per-boot` thing you have to do (writing a temporary byte to the pci 
 + run `sudo docker run -it -v $PWD:/projects --privileged --name pytorch --device=/dev/kfd --device=/dev/dri --group-add video jrcichra/rocm-pytorch-gfx803`
 + This will mount the current directory into `/projects`. You can navigate there and try your pytorch project. It 'should' have GPU acceleration. I checked this with:
 ```
+import torch
 if torch.cuda.is_available():
     device = torch.device("cuda:0")
     print("Running on the GPU")
