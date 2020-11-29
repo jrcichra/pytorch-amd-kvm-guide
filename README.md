@@ -10,7 +10,7 @@ There is a `per-boot` thing you have to do (writing a temporary byte to the pci 
 + The arch wiki has a great guide on how to set up PCI passthrough:
 + https://wiki.archlinux.org/index.php/PCI_passthrough_via_OVMF
 + Wendell's guide might be more N00B friendly: https://forum.level1techs.com/t/ubuntu-17-04-vfio-pcie-passthrough-kernel-update-4-14-rc1/119639
-+ In the end, the expectation is: you should be able to boot a VM and pass through a graphics card to an Ubuntu VM
++ In the end, the expectation is: you should be able to boot a VM with a dedicated AMD GPU
 
 # AMD's Ubuntu Guide
 + https://rocmdocs.amd.com/en/latest/Installation_Guide/Installation-Guide.html#ubuntu
