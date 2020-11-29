@@ -48,7 +48,7 @@ There is a `per-boot` thing you have to do (writing a temporary byte to the pci 
 
 # ROCM/Pytorch container
 + If you don't understand docker containers, don't worry. Think of them as `chroot`'ed environments. If you don't know `chroot`, think of it like you're downloading a directory structure from someone, and you can set `/` to the top directory they sent you. This is only one aspect of docker, but esentially what we're using it for here. You're downloading a precompiled environment with userspace ROCM/pytorch support baked in. Docker doesn't solve the kernel magic above, only userspace
-+ Anyway, I built in a fix for the official rocm/pytorch container for gfx803 cards (I have an RX580). If you don't have a card in this family, you can try the base docker image instead of mine: replace `jrcichra/rocm-pytorch-gfx803` with `rocm/pytorch`
++ Anyway, I built in a fix for the official rocm/pytorch container for gfx803 cards (I have an RX580). If you don't have a card in this family, you can try the base docker image instead of mine: replace `jrcichra/rocm-pytorch-gfx803` with `rocm/pytorch`. If my container is borked and you need gfx803 support. Use the official container and, once launched, manually run the line specified in the `Dockerfile` here: https://github.com/jrcichra/rocm-pytorch-gfx803
 + `cd` to your machine learning project directory
 + run `sudo docker run -it -v $PWD:/projects --privileged --name pytorch --device=/dev/kfd --device=/dev/dri --group-add video jrcichra/rocm-pytorch-gfx803`
 + This will mount the current directory into `/projects`. You can navigate there and try your pytorch project. It 'should' have GPU acceleration. I checked this with:
